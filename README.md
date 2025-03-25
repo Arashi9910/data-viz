@@ -1,6 +1,79 @@
 # 數據可視化儀表板
 
-這是一個使用Next.js構建的數據可視化儀表板，用於顯示從Google Sheets獲取的銷售數據。
+這是一個用於展示品牌銷售數據和賣場瀏覽數據的可視化儀表板專案。
+
+## 特點
+
+- 品牌銷售數據儀表板
+- 賣場瀏覽數據儀表板
+- 即時數據更新功能
+- 互動式圖表（支持縮放和平移）
+
+## 技術架構
+
+- 前端：Next.js + React
+- 樣式：Tailwind CSS
+- 圖表：Chart.js
+- API服務：Express.js + Axios
+
+## 部署方式
+
+### 前端部署 (GitHub Pages)
+
+1. 構建項目：
+   ```
+   npm run build
+   ```
+
+2. 創建 `.nojekyll` 文件：
+   ```
+   cd out && type nul > .nojekyll
+   ```
+
+3. 部署到 GitHub Pages：
+   ```
+   git add out/
+   git commit -m "Deploy to gh-pages"
+   git subtree push --prefix out origin gh-pages
+   ```
+
+### API 服務部署 (Vercel)
+
+1. 進入 API 服務目錄：
+   ```
+   cd api-service
+   ```
+
+2. 部署到 Vercel：
+   ```
+   npm run deploy
+   ```
+
+## 數據更新
+
+儀表板通過以下方式獲取數據：
+
+1. 品牌數據：`https://api-service-lins-projects-913ae17f.vercel.app/api/fetch-brand-data`
+2. 賣場數據：`https://api-service-lins-projects-913ae17f.vercel.app/api/fetch-view-data`
+
+數據源為 Google Sheets，可通過儀表板上的刷新按鈕手動更新，或開啟自動刷新功能。
+
+## 開發指南
+
+1. 安裝依賴：
+   ```
+   npm install
+   ```
+
+2. 啟動開發服務器：
+   ```
+   npm run dev
+   ```
+
+3. 開發環境訪問：
+   ```
+   http://localhost:3000
+   ```
 
 ## 功能
 

@@ -9,6 +9,9 @@ import axios from 'axios';
 // 動態引入縮放插件，避免服務器端渲染問題
 import dynamic from 'next/dynamic';
 
+// API服務端點配置
+const API_ENDPOINT = 'https://api-service-lins-projects-913ae17f.vercel.app';
+
 export default function ViewData() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -47,7 +50,7 @@ export default function ViewData() {
     setErrorDetails(null);
     
     try {
-      const response = await axios.get('/api/fetch-view-data', { 
+      const response = await axios.get(`${API_ENDPOINT}/api/fetch-view-data`, { 
         timeout: 15000,
         params: {
           timestamp: new Date().getTime() // 添加時間戳參數避免緩存

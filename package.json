@@ -1,34 +1,30 @@
 {
   "name": "data-viz",
   "version": "1.0.0",
-  "private": true,
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "dev:https": "node server.js",
     "build": "next build",
     "start": "next start",
     "start:https": "NODE_ENV=production node server.js",
     "lint": "next lint",
-    "deploy": "next build && touch out/.nojekyll && gh-pages -d out -t true"
+    "deploy": "next build && touch out/.nojekyll && git add out/ && git commit -m \"Deploy to gh-pages\" && git subtree push --prefix out origin gh-pages",
+    "export": "next build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "axios": "^1.6.7",
-    "chart.js": "^4.4.2",
-    "chartjs-plugin-zoom": "^2.0.1",
-    "next": "14.1.0",
-    "react": "^18",
-    "react-dom": "^18"
-  },
-  "devDependencies": {
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
-    "gh-pages": "^6.3.0",
-    "postcss": "^8",
+    "autoprefixer": "^10.4.14",
+    "axios": "^1.8.2",
+    "chart.js": "^4.4.8",
+    "chartjs-plugin-zoom": "^2.2.0",
+    "next": "^13.4.19",
+    "postcss": "^8.4.24",
+    "react": "^18.2.0",
+    "react-chartjs-2": "^5.3.0",
+    "react-dom": "^18.2.0",
     "tailwindcss": "^3.3.0"
   }
 }
