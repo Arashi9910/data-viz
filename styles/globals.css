@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-gray-50;
+}
+
+.container {
+  @apply px-4 mx-auto max-w-7xl;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 mb-6;
+}
+
+.chart-container {
+  @apply h-96 w-full;
+} 
